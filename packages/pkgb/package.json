@@ -1,0 +1,24 @@
+{
+  "name": "@monorepoproject/pkgb",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@monorepoproject/pkga": "^0.0.0",
+    "dayjs": "^1.11.13"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "typescript": "^5.1.6"
+  },
+  "scripts": {
+    "watch": "tsc index.ts --outDir dist --watch",
+    "build": "rimraf dist && tsc index.ts --outDir dist",
+    "prepublish": "pnpm run build"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
