@@ -1,12 +1,12 @@
 {
   "name": "@monorepoproject/pkgb",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "dist/index.js",
   "files": [
     "dist"
   ],
   "dependencies": {
-    "@monorepoproject/pkga": "^0.0.0",
+    "@monorepoproject/pkga": "^0.1.0",
     "dayjs": "^1.11.13"
   },
   "devDependencies": {

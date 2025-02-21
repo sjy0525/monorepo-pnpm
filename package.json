@@ -1,20 +1,43 @@
 {
-  "name": "monorepo-pnpm",
-  "version": "1.0.0",
-  "description": "",
-  "private": true,
-  "scripts": {
-    "build": "pnpm -r --filter=./packages/* run build"
+  "name": "@monorepoproject/pkgd",
+  "version": "0.0.0",
+  "type": "module",
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
+  "main": "./dist/pkgd.umd.cjs",
+  "module": "./dist/pkgd.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/pkgd.js",
+    "require": "./dist/pkgd.umd.cjs"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.4.1",
-  "dependencies": {
-    "typescript": "^5.1.6"
+  "scripts": {
+    "dev": "vite",
+    "build": "pnpm -r --filter=./packages/* run build",
+    "changeset": "changeset",
+    "test": "vitest run",
+    "test:report": "vitest --ui --coverage"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.28.0",
-    "eslint": "^9.20.1"
+    "@monorepoproject/pkga": "^0.1.0",
+    "@monorepoproject/pkgb": "^0.0.1",
+    "@monorepoproject/pkgc": "^0.0.0",
+    "@monorepoproject/pkgd": "^0.0.0",
+    "@types/node": "^22.13.4",
+    "@vitest/coverage-istanbul": "^3.0.6",
+    "@vitest/ui": "^3.0.6",
+    "typescript": "^5.7.3",
+    "vite": "^4.5.9",
+    "vite-plugin-dts": "^3.3.1",
+    "vitest": "^3.0.6"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@vitest/coverage-v8": "^3.0.6"
   }
 }
